@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cameron Crosby - Software Developer</title>
+    <meta
+      name="description"
+      content="Personal portfolio showcasing web development projects and skills"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <a href="#home">Cameron Crosby</a>
+        </div>
+        <ul class="nav-menu" id="nav-menu">
+          <li class="nav-item">
+            <a href="#home" class="nav-link active">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#about" class="nav-link">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="#skills" class="nav-link">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a href="#projects" class="nav-link">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" class="nav-link">Contact</a>
+          </li>
+        </ul>
+        <div class="nav-toggle" id="nav-toggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+    </nav>
+
+    <main id="main-content">
+      <!-- Hero Section -->
+      <section id="home" class="hero section">
+        <div class="hero-container">
+          <div class="hero-content">
+            <h1 class="hero-title">
+              Hi, I'm <span class="highlight">Cameron Crosby</span>
+            </h1>
+            <p class="hero-subtitle">Full Stack Software Developer</p>
+            <p class="hero-description">
+              I create beautiful, responsive web applications with modern
+              technologies. Passionate about clean code and exceptional user
+              experiences.
+            </p>
+            <div class="hero-buttons">
+              <a href="#projects" class="btn btn-primary">View My Work</a>
+              <a href="#contact" class="btn btn-outline">Get In Touch</a>
+            </div>
+          </div>
+          <div class="hero-image">
+            <div class="hero-img-container">
+              <img
+                src="assets/images/profile.jpg"
+                alt="Profile Picture"
+                id="profile-img"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="scroll-indicator">
+          <a href="#about" class="scroll-link">
+            <i class="fas fa-chevron-down"></i>
+          </a>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="about section">
+        <div class="container">
+          <h2 class="section-title">About Me</h2>
+          <div class="about-content">
+            <div class="about-text">
+              <p class="about-description">
+                I'm a passionate web developer with a strong foundation in both
+                front-end and back-end technologies. I love creating digital
+                experiences that are not only functional but also beautiful and
+                intuitive.
+              </p>
+              <p class="about-description">
+                When I'm not coding, you can find me exploring new technologies,
+                contributing to open-source projects, or enjoying a good cup of
+                coffee while planning my next creative endeavor.
+              </p>
+              <div class="about-info">
+                <div class="info-item">
+                  <i class="fas fa-calendar-alt"></i>
+                  <span>Experience: 4+ Years</span>
+                </div>
+                <div class="info-item">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span>Location: Indianapolis, IN</span>
+                </div>
+                <div class="info-item">
+                  <i class="fas fa-envelope"></i>
+                  <span>Email: camcrosby09@gmail.com</span>
+                </div>
+              </div>
+              <a
+                href="assets/CameronCrosbyResume2025.pdf"
+                class="btn btn-primary"
+                download
+              >
+                <i class="fas fa-download"></i> Download Resume
+              </a>
+            </div>
+            <div class="about-image">
+              <img src="assets/images/about.jpg" alt="About me" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills" class="skills section">
+        <div class="container">
+          <h2 class="section-title">Skills & Technologies</h2>
+          <div class="skills-container">
+            <div class="skill-category">
+              <h3>Frontend</h3>
+              <div class="skill-list">
+                <div class="skill-item">
+                  <i class="fab fa-html5"></i>
+                  <span>HTML5</span>
+                </div>
+                <div class="skill-item">
+                  <i class="fab fa-css3-alt"></i>
+                  <span>CSS3</span>
+                </div>
+                <div class="skill-item">
+                  <i class="fab fa-js-square"></i>
+                  <span>JavaScript</span>
+                </div>
+                <div class="skill-item">
+                  <i class="fab fa-react"></i>
+                  <span>React</span>
+                </div>
+                <div class="skill-item">
+                  <i class="fab fa-php"></i>
+                  <span>PHP</span>
+                </div>
+              </div>
+            </div>
+            <div class="skill-category">
+              <h3>Backend</h3>
+              <div class="skill-list">
+                <div class="skill-item">
+                  <i class="fab fa-node-js"></i>
+                  <span>Node.js</span>
+                </div>
+                <div class="skill-item">
+                  <i class="fab fa-python"></i>
+                  <span>Python</span>
+                </div>
+                <div class="skill-item">
+                  <i class="fas fa-database"></i>
+                  <span>MySQL</span>
+                </div>
+                <div class="skill-item">
+                  <i class="fab fa-laravel"></i>
+                  <span>Laravel</span>
+                </div>
+                <div class="skill-item">
+                  <i class="fas fa-server"></i>
+                  <span>Express.js</span>
+                </div>
+              </div>
+            </div>
+            <div class="skill-category">
+              <h3>Tools & Others</h3>
+              <div class="skill-list">
+                <div class="skill-item">
+                  <i class="fab fa-git-alt"></i>
+                  <span>Git</span>
+                </div>
+                <div class="skill-item">
+                  <i class="fab fa-github"></i>
+                  <span>GitHub</span>
+                </div>
+                <div class="skill-item">
+                  <i class="fab fa-figma"></i>
+                  <span>Figma</span>
+                </div>
+                <div class="skill-item">
+                  <i class="fas fa-mobile-alt"></i>
+                  <span>Responsive Design</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="projects section">
+        <div class="container">
+          <h2 class="section-title">Featured Projects</h2>
+          <div class="projects-grid">
+            <div class="project-card">
+              <div class="project-image">
+                <img
+                  src="assets/images/project1.jpg"
+                  alt="E-commerce Website"
+                />
+                <div class="project-overlay">
+                  <div class="project-links">
+                    <a href="#" class="project-link" target="_blank">
+                      <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <a href="#" class="project-link" target="_blank">
+                      <i class="fab fa-github"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="project-content">
+                <h3>E-commerce Website</h3>
+                <p>
+                  A full-stack e-commerce platform built with React, Node.js,
+                  and MongoDB. Features include user authentication, shopping
+                  cart, and payment integration.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">React</span>
+                  <span class="tech-tag">Node.js</span>
+                  <span class="tech-tag">MongoDB</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-image">
+                <img
+                  src="assets/images/project2.jpg"
+                  alt="Task Management App"
+                />
+                <div class="project-overlay">
+                  <div class="project-links">
+                    <a href="#" class="project-link" target="_blank">
+                      <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <a href="#" class="project-link" target="_blank">
+                      <i class="fab fa-github"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="project-content">
+                <h3>Task Management App</h3>
+                <p>
+                  A responsive task management application with drag-and-drop
+                  functionality, real-time updates, and team collaboration
+                  features.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">Vue.js</span>
+                  <span class="tech-tag">Firebase</span>
+                  <span class="tech-tag">CSS3</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-image">
+                <img src="assets/images/project3.jpg" alt="Weather Dashboard" />
+                <div class="project-overlay">
+                  <div class="project-links">
+                    <a href="#" class="project-link" target="_blank">
+                      <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <a href="#" class="project-link" target="_blank">
+                      <i class="fab fa-github"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="project-content">
+                <h3>Weather Dashboard</h3>
+                <p>
+                  An interactive weather dashboard that displays current
+                  conditions, forecasts, and historical data with beautiful
+                  visualizations.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">JavaScript</span>
+                  <span class="tech-tag">Chart.js</span>
+                  <span class="tech-tag">API</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="projects-cta">
+            <a
+              href="https://github.com/crosby7"
+              class="btn btn-outline"
+              target="_blank"
+            >
+              View All Projects
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="contact section">
+        <div class="container">
+          <h2 class="section-title">Get In Touch</h2>
+          <div class="contact-content">
+            <div class="contact-info">
+              <h3>Let's Work Together</h3>
+              <p>
+                I'm always interested in new opportunities and exciting
+                projects. Whether you have a question or just want to say hi,
+                feel free to reach out!
+              </p>
+
+              <div class="contact-details">
+                <div class="contact-item">
+                  <i class="fas fa-envelope"></i>
+                  <div>
+                    <h4>Email</h4>
+                    <p>camcrosby09@gmail.com</p>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <div>
+                    <h4>Location</h4>
+                    <p>Indianapolis, IN</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="social-links">
+                <a href="#" class="social-link" target="_blank">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="#" class="social-link" target="_blank">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="#" class="social-link" target="_blank">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-link" target="_blank">
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </div>
+            </div>
+
+            <form class="contact-form" id="contact-form">
+              <div class="form-group">
+                <input type="text" name="name" id="name" required />
+                <label for="name">Your Name</label>
+              </div>
+              <div class="form-group">
+                <input type="email" name="email" id="email" required />
+                <label for="email">Your Email</label>
+              </div>
+              <div class="form-group">
+                <input type="text" name="subject" id="subject" required />
+                <label for="subject">Subject</label>
+              </div>
+              <div class="form-group">
+                <textarea
+                  name="message"
+                  id="message"
+                  rows="5"
+                  required
+                ></textarea>
+                <label for="message">Your Message</label>
+              </div>
+              <button type="submit" class="btn btn-primary">
+                <i class="fas fa-paper-plane"></i>
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-text">
+            <p>&copy; 2025 Cameron Crosby. All rights reserved.</p>
+          </div>
+          <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
