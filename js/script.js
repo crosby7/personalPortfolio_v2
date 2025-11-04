@@ -1,5 +1,3 @@
-// ===== SINGLE PAGE APPLICATION FUNCTIONALITY =====
-
 // DOM Elements
 const navbar = document.getElementById("navbar");
 const navToggle = document.getElementById("nav-toggle");
@@ -8,8 +6,6 @@ const navLinks = document.querySelectorAll(".nav-link");
 const backToTopBtn = document.getElementById("back-to-top");
 const contactForm = document.getElementById("contact-form");
 const sections = document.querySelectorAll(".section");
-
-// ===== NAVIGATION FUNCTIONALITY =====
 
 // Mobile Navigation Toggle
 navToggle.addEventListener("click", () => {
@@ -42,8 +38,6 @@ navLinks.forEach((link) => {
   });
 });
 
-// ===== SCROLL FUNCTIONALITY =====
-
 // Navbar scroll effect
 window.addEventListener("scroll", () => {
   const scrollY = window.pageYOffset;
@@ -73,7 +67,6 @@ backToTopBtn.addEventListener("click", () => {
   });
 });
 
-// ===== ACTIVE NAVIGATION HIGHLIGHTING =====
 const observerOptions = {
   root: null,
   rootMargin: "-70px 0px -70px 0px",
@@ -100,10 +93,18 @@ sections.forEach((section) => {
   observer.observe(section);
 });
 
-// ===== SCROLL ANIMATIONS =====
+// ===== FADE-IN ANIMATIONS =====
 const fadeElements = document.querySelectorAll(
   ".fade-in, .project-card, .skill-item"
 );
+
+const cleanup = () => {
+  for (const element of fadeElements) {
+    element.classList.remove("fade-in", "visible");
+  }
+};
+
+setTimeout(cleanup, 1000);
 
 const fadeObserver = new IntersectionObserver(
   (entries) => {
@@ -131,10 +132,14 @@ contactForm.addEventListener("submit", async (e) => {
   const formData = new FormData(contactForm);
   const formObject = {};
 
+  document.getElementById("time").value = new Date().toLocaleString("en-US");
+
   // Convert FormData to object
   for (let [key, value] of formData.entries()) {
     formObject[key] = value;
   }
+
+  console.log("Form Object:", formObject);
 
   // Validate form
   if (!validateForm(formObject)) {
@@ -148,8 +153,16 @@ contactForm.addEventListener("submit", async (e) => {
   submitBtn.disabled = true;
 
   try {
-    // Simulate form submission (replace with actual endpoint)
-    await simulateFormSubmission(formObject);
+    console.log("Form Data:", formObject);
+
+    // Submit form through EmailJS
+    const response = await emailjs.sendForm(
+      "service_v1t9psp",
+      "template_exmzz0b",
+      contactForm
+    );
+
+    console.log("EmailJS Response:", response);
 
     // Show success message
     showNotification(
@@ -206,16 +219,6 @@ function validateForm(data) {
 function isValidEmail(email) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
-}
-
-// Simulate form submission (replace with actual implementation)
-function simulateFormSubmission(data) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      // Simulate success (90% chance) or failure (10% chance)
-      Math.random() > 0.1 ? resolve(data) : reject(new Error("Network error"));
-    }, 2000);
-  });
 }
 
 // ===== NOTIFICATION SYSTEM =====
@@ -331,78 +334,6 @@ function removeNotification(notification) {
   }, 300);
 }
 
-// ===== DYNAMIC CONTENT LOADING =====
-
-// Project data (in a real SPA, this would come from an API)
-const projectsData = {
-  all: [
-    {
-      id: 1,
-      title: "E-commerce Website",
-      description:
-        "A full-stack e-commerce platform built with React, Node.js, and MongoDB. Features include user authentication, shopping cart, and payment integration.",
-      image: "assets/images/project1.jpg",
-      tech: ["React", "Node.js", "MongoDB"],
-      liveUrl: "#",
-      githubUrl: "#",
-    },
-    {
-      id: 2,
-      title: "Task Management App",
-      description:
-        "A responsive task management application with drag-and-drop functionality, real-time updates, and team collaboration features.",
-      image: "assets/images/project2.jpg",
-      tech: ["Vue.js", "Firebase", "CSS3"],
-      liveUrl: "#",
-      githubUrl: "#",
-    },
-    {
-      id: 3,
-      title: "Weather Dashboard",
-      description:
-        "An interactive weather dashboard that displays current conditions, forecasts, and historical data with beautiful visualizations.",
-      image: "assets/images/project3.jpg",
-      tech: ["JavaScript", "Chart.js", "API"],
-      liveUrl: "#",
-      githubUrl: "#",
-    },
-  ],
-};
-
-// Load project filters (if you want to add filtering functionality)
-function initializeProjectFilters() {
-  const filtersContainer = document.querySelector(".project-filters");
-  if (!filtersContainer) return;
-
-  const filters = ["All", "Web Apps", "Mobile", "Desktop"];
-
-  filters.forEach((filter) => {
-    const filterBtn = document.createElement("button");
-    filterBtn.textContent = filter;
-    filterBtn.className = `filter-btn ${filter === "All" ? "active" : ""}`;
-    filterBtn.addEventListener("click", () =>
-      filterProjects(filter.toLowerCase())
-    );
-    filtersContainer.appendChild(filterBtn);
-  });
-}
-
-// Filter projects (placeholder for future functionality)
-function filterProjects(category) {
-  console.log(`Filtering projects by: ${category}`);
-  // Implementation would filter and re-render projects
-}
-
-// ===== REMOVED TYPING ANIMATION =====
-// Typing animation removed - hero subtitle is now static
-
-// ===== SIMPLE PARALLAX BACKGROUND =====
-function initSimpleParallax() {
-  // The parallax effect is now handled purely by CSS with background-attachment: fixed
-  // This function can be used for additional effects if needed
-  console.log("Simple parallax background active via CSS");
-}
-
 // ===== PARTICLE BACKGROUND ANIMATION =====
 function initParticles() {
   const heroSection = document.querySelector(".hero");
@@ -475,16 +406,12 @@ function initParticles() {
 
 // ===== INITIALIZE ALL FUNCTIONALITY =====
 document.addEventListener("DOMContentLoaded", () => {
-  // Initialize simple parallax background
-  initSimpleParallax();
-
-  // Initialize particles (optional - can be heavy on mobile)
+  // Initialize particles only on larger screens
   if (window.innerWidth > 1024) {
     initParticles();
   }
 
-  // Initialize project filters if container exists
-  initializeProjectFilters();
+  emailjs.init("NNFts4owBtIvLOE1s");
 
   // Add loading animation to page
   document.body.classList.add("loaded");
@@ -544,12 +471,6 @@ const optimizedScroll = throttle(() => {
 window.removeEventListener("scroll", window.addEventListener);
 window.addEventListener("scroll", optimizedScroll);
 
-// ===== ERROR HANDLING =====
-window.addEventListener("error", (e) => {
-  console.error("JavaScript Error:", e.error);
-  // In production, you might want to send this to a logging service
-});
-
 // Handle unhandled promise rejections
 window.addEventListener("unhandledrejection", (e) => {
   console.error("Unhandled Promise Rejection:", e.reason);
@@ -573,33 +494,3 @@ navToggle.addEventListener("keydown", (e) => {
     navToggle.click();
   }
 });
-
-// Skip to content link (for screen readers)
-const skipLink = document.createElement("a");
-skipLink.href = "#main-content";
-skipLink.textContent = "Skip to main content";
-skipLink.className = "skip-link";
-skipLink.style.cssText = `
-    position: absolute;
-    top: -40px;
-    left: 6px;
-    background: #667eea;
-    color: white;
-    padding: 8px;
-    text-decoration: none;
-    border-radius: 4px;
-    z-index: 10001;
-    transition: top 0.3s ease;
-`;
-
-skipLink.addEventListener("focus", () => {
-  skipLink.style.top = "6px";
-});
-
-skipLink.addEventListener("blur", () => {
-  skipLink.style.top = "-40px";
-});
-
-document.body.insertBefore(skipLink, document.body.firstChild);
-
-console.log("✨ Personal Portfolio SPA loaded successfully!");
